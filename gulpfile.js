@@ -1,18 +1,27 @@
 var DEV_SERVER_PORT = 8080,
-    LIVERELOAD_SERVER_PORT = 20202,
+    LIVERELOAD_SERVER_PORT = 35729,
 
 
     gulp = require("gulp"),
     express = require("express"),
-    lr = require("tiny-lr"),
+    lr = require("tiny-lr")(),
+    path = require('path'),
     devServer = express();
 
 function startupDevServer(){
     devServer.use(express.static(__dirname + "/dev"));
-    var some = devServer.listen(DEV_SERVER_PORT, function(){
+    devServer.listen(DEV_SERVER_PORT, function(){
         console.log("debugging server is up ");
-    }).on("close", function(){
-        console.log("dev server is down");
+    });
+    lr.listen(LIVERELOAD_SERVER_PORT);
+    gulp.watch("./dev/*.html", function(event){
+        var fileName = path.relative(__dirname, event.path);
+
+        lr.changed({
+            body: {
+                files: [fileName]
+            }
+        });
     });
 }
 
