@@ -1,0 +1,17 @@
+extends ./layouts/mainLayout
+
+block head
+    title= pageTitle
+
+block body
+    h1 Jade - node template engine
+    #container.col
+        p.
+          Jade is a terse and simple
+          templating language with a
+          strong focus on performance
+          and powerful features and items.
+        include includes/template.jade
+
+        +svgCircle('red')
+        div blah blah
