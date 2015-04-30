@@ -1,7 +1,0 @@
-{
-    "name": "client-dependencies",
-    "version": "1.0.0",
-    "devDependencies":{
-        "bootstrap-stylus": "3.2.0"
-    }
-}
