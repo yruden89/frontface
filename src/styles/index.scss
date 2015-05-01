@@ -1,3 +1,168 @@
-h1{
-    color: blue;
+@import "variables";
+@import "foundation/scss/foundation/components/global";
+$secondary-text-size: 1.2rem;
+$form-padding: 20px;
+
+.landing-page{
+    $secondary-text-color: rgba(255,255,255,0.7);
+    $form-item-height-small: 9vh;
+    $form-item-height: 4vh;
+
+
+
+    height: 100vh;
+    background: url("/images/st_martin.jpg") right 0 no-repeat ;
+    background-size: cover;
+    text-shadow: $text-shadow;
+
+    .landing-wrapper{
+        padding: 0 10px;
+        height: 100%;
+        background: $blackout;
+    }
+
+    .landing-header{
+        padding-top: 15vh;
+        color: white;
+        font-size: 15vh;
+        line-height: 15vh;
+        margin: 0;
+
+        .call{
+            display: block;
+            color: $secondary-text-color;
+            font-size: $secondary-text-size;
+            line-height: $secondary-text-size;
+        }
+    }
+
+    .login-info{
+        margin-top: 2rem;
+        color: $secondary-text-color;
+        font-size: $secondary-text-size;
+        line-height: $secondary-text-size;
+    }
+
+    .flight-places-form{
+        .columns{
+            padding: 0;
+        }
+
+        input{
+            height: $form-item-height-small;
+            font-size: $form-item-height-small - 3vh;
+        }
+
+        .calendar-control{
+            margin-left: 10px;
+            color: $utilits-color;
+
+            @include controlActions(color,$utilits-color);
+
+        }
+
+        .control-icon{
+            font-size: $form-item-height-small;
+            line-height: $form-item-height-small;
+
+        }
+
+        .proceed-button{
+            width: 100%;
+            color: #ffffff;
+            height: $form-item-height-small;
+            font-size: $secondary-text-size;
+            line-height: $form-item-height-small;
+
+            background: $utilits-color;
+            display: inline-block;
+            text-align: center;
+
+            .fi-arrow-right{
+                vertical-align: middle;
+            }
+
+            .control-icon{
+                color: #fff;
+            }
+
+            @include controlActions(background, $utilits-color);
+        }
+
+    }
+    /*==============================================================================================================*/
+    @media #{$medium-up}{;
+
+        .landing-wrapper{
+            background: none;
+            padding: 15vh 50px 0;
+        }
+
+        .landing-header{
+            padding:  $form-padding;
+            text-shadow: 1px 1px 0 #000;
+            font-size: 4rem;
+            line-height: 4rem;
+            background: $blackout;
+            display: inline-block;
+
+            .call{
+                line-height: $secondary-text-size;
+                color:#ffffff;
+            }
+        }
+
+        .flight-places-form{
+            background: $blackout;
+            padding: $form-padding;
+            margin-top: 5vh;
+
+            input{
+                height: $form-item-height;
+                font-size: $form-item-height - 2vh;
+                margin: 0;
+            }
+
+            .control-icon{
+                font-size: $form-item-height;
+                line-height: $form-item-height;
+
+            }
+
+            .row{
+                max-width: 100%;
+            }
+
+            .login-info{
+                margin-top: 0;
+                font-size: $secondary-text-size;
+                line-height: $secondary-text-size + 0.4rem;
+            }
+
+            .proceed-button{
+                height: $form-item-height;
+                font-size: $form-item-height - 2vh;
+                line-height: $form-item-height;
+            }
+
+
+        }
+    }
+
+    /*==============================================================================================================*/
+    @media #{$large-up}{
+
+    }
+
+    /*==============================================================================================================*/
+    @media #{$xlarge-up}{
+        .landing-wrapper{
+            padding: 15vh 0 0;
+            width: 1200px;
+            margin: 0 auto;
+        }
+    }
+
+
 }
+

@@ -1,0 +1,9 @@
+{
+    "name": "let`s fly styles",
+    "version": "1.0.0",
+    "main": "path/to/main.css",
+    "dependencies": {
+        "foundation-icon-fonts": "*",
+        "mappy-breakpoints": "*"
+    }
+}

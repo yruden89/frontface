@@ -2,16 +2,56 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Let`s fly</title>
     <!-- injector:css -->
     <link rel="stylesheet" href="/styles/css/1-main.css">
+    <link rel="stylesheet" href="/styles/css/common.css">
     <link rel="stylesheet" href="/styles/css/index.css">
+    <link rel="stylesheet" href="/styles/css/tickets-search.css">
+    <link rel="stylesheet" href="/styles/css/ticketsSearch.css">
     <!-- endinjector -->
 </head>
 <body>
+<div class="landing-page">
+    <div class="landing-wrapper">
+        <h1 class="landing-header">
+            <div class="call">Where do you want to fly today?</div>
+            Let`s fly
+        </h1>
 
-<h1>Hello there</h1>
-woop
+        <form class="flight-places-form" action="#">
+            <p class="login-info">You aren`t new?&nbsp;<a href="#">Login.</a></p>
+            <div class="row">
+                <div class="small-10 medium-4 columns">
+                    <input type="text" placeholder="from" name="from"/>
+                </div>
+                <div class="small-2 medium-1 columns">
+                    <i class="calendar-control control-icon fi-calendar large"></i>
+                </div>
+                <div class="small-10 medium-4 columns">
+                    <input type="text" placeholder="to" name="to"/>
+                </div>
+                <div class="small-2 medium-1 columns">
+                    <i class="calendar-control control-icon fi-calendar large"></i>
+                </div>
+                <div class="small-10 medium-offset-0 medium-2 columns left">
+                    <a class="proceed-button" href="/mocks/tickets-search.html">
+                        <i class="control-icon fi-arrow-right"></i>
+                        <span class="hide-for-medium-only">Search tickets</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
 
+            </div>
+            <div class="row">
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
 </body>
 </html>

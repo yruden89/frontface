@@ -137,7 +137,8 @@ module.exports = function (grunt) {
                     }
                 },
                 files:{
-                    "src/mocks/index.html":["src/styles/css/*.css"]
+                    "src/mocks/index.html":["src/styles/css/*.css"],
+                    "src/mocks/tickets-search.html":["src/styles/css/*.css"]
                 }
             }
         },
@@ -161,7 +162,7 @@ module.exports = function (grunt) {
             },
             sass:{
                 files:["src/styles/*.scss"],
-                tasks:["newer:sass:dev"]
+                tasks:["sass:dev"]
             }
         }
     });

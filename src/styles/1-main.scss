@@ -1,4 +1,6 @@
 @import "foundation/scss/normalize";
 @import "foundation/scss/foundation";
 
-@import "index";
+$fi-path: "/styles/bower_components/foundation-icon-fonts";
+@import "bower_components/foundation-icon-fonts/_foundation-icons";
+

@@ -1,0 +1,20 @@
+$utilits-color: #73A5FF;
+$text-shadow:1px 1px 0 #000;
+$blackout: rgba(0,0,0,0.6);
+$breakpoints: (
+    'medium': 800px
+);
+
+
+@mixin controlActions($prop,$color) {
+    transition: #{$prop} 200ms ease;
+
+    &:hover {
+        #{$prop}: darken($color, 10%);
+    }
+
+    &:active {
+        #{$prop}: lighten($color, 10%);
+
+    }
+}
