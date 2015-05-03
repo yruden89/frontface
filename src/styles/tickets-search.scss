@@ -106,6 +106,7 @@
                     text-align: right;
                     flex-shrink: 0;
                     content: attr(data-label);
+                    font-weight: bold;
                     width: 50%;
                 }
 
