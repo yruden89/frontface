@@ -8,10 +8,12 @@ $form-padding: 20px;
     $form-item-height: 4vh;
     $landing-bg-image: url("/images/st_martin.jpg") right 0 no-repeat;
 
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 1px;
     background: #{$blackout}, #{$landing-bg-image} ;
     background-size: cover;
     text-shadow: $text-shadow;
+
 
     .wrapper{
         height: 100%;
@@ -42,7 +44,14 @@ $form-padding: 20px;
 
     .flight-places-form{
         .columns{
+            padding-left:0.3rem;
+            padding-right: 0.3rem;
+        }
+
+        .postfix.button{
             padding: 0;
+            text-align: center;
+            margin: 0;
         }
 
         input{
@@ -59,9 +68,16 @@ $form-padding: 20px;
         }
 
         .control-icon{
-            font-size: $form-item-height-small;
-            line-height: $form-item-height-small;
+            display: inline-block;
+            color: #ffffff;
+            font-size: $form-item-height-small - 0.4vh;
+            line-height: $form-item-height-small - 0.4vh;
 
+        }
+
+        .button{
+            height: $form-item-height-small;
+            line-height: $form-item-height-small;
         }
 
         .proceed-button{
@@ -69,9 +85,10 @@ $form-padding: 20px;
             color: #ffffff;
             font-weight: 100;
             font-family: $header-font-family;
-            text-shadow: none   ;
-            height: $form-item-height-small;
             font-size: $secondary-text-size;
+            text-shadow: none;
+            height: $form-item-height-small;
+
             line-height: $form-item-height-small;
 
             background: $utilits-color;
@@ -80,10 +97,6 @@ $form-padding: 20px;
 
             .fi-arrow-right{
                 vertical-align: middle;
-            }
-
-            .control-icon{
-                color: #fff;
             }
 
             @include controlActions(background, $utilits-color);
@@ -122,12 +135,11 @@ $form-padding: 20px;
             input{
                 height: $form-item-height;
                 font-size: $form-item-height - 2vh;
-                margin: 0;
             }
 
             .control-icon{
-                font-size: $form-item-height;
-                line-height: $form-item-height;
+                font-size: $form-item-height - 0.4vh;
+                line-height: $form-item-height  - 0.4vh;
 
             }
 
@@ -143,7 +155,7 @@ $form-padding: 20px;
                 font-weight: 100;
             }
 
-            .proceed-button{
+            .proceed-button, .postfix.button{
                 height: $form-item-height;
                 font-size: $form-item-height - 2vh;
                 line-height: $form-item-height;
@@ -157,7 +169,13 @@ $form-padding: 20px;
 
     /*==============================================================================================================*/
     @media #{$large-up}{
-
+        .flight-places-form{
+            input{
+                height: $form-item-height;
+                font-size: $form-item-height - 2vh;
+                margin: 0;
+            }
+        }
     }
 
     /*==============================================================================================================*/

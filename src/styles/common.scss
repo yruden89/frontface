@@ -65,6 +65,11 @@ $header-font-family: Roboto, Arial, sans-serif;
 .row{
     max-width: 100%;
 }
+
+.button{
+    background: $utilits-color;
+    @include controlActions(background, $utilits-color);
+}
 /*================= Foundation override end =======================================================*/
 
 /*================= RadioButton Start =============================================================*/

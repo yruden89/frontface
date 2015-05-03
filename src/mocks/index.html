@@ -23,22 +23,33 @@
         <form class="flight-places-form" action="#">
             <p class="login-info">You aren`t new?&nbsp;<a href="#">Login.</a></p>
             <div class="row">
-                <div class="small-10 medium-4 columns">
+                <div class="small-10 medium-6 large-3 columns">
                     <input type="text" placeholder="from" name="from"/>
                 </div>
-                <div class="small-2 medium-1 columns">
-                    <i class="calendar-control control-icon fi-calendar large"></i>
-                </div>
-                <div class="small-10 medium-4 columns">
+                <!--<div class="small-2 medium-1 columns">-->
+                    <!--<i class="calendar-control control-icon fi-calendar large"></i>-->
+                <!--</div>-->
+                <div class="small-10 medium-6 large-3 columns">
                     <input type="text" placeholder="to" name="to"/>
                 </div>
-                <div class="small-2 medium-1 columns">
-                    <i class="calendar-control control-icon fi-calendar large"></i>
+                <div class="small-10 medium-6 large-3 columns">
+                    <div class="row collapse">
+                        <div class="small-9 columns">
+                            <input placeholder="dd/mm/yy" type="text" name="flightDate"/>
+                        </div>
+                        <div class="small-3 columns">
+                            <a class="postfix button" href="#">
+                                <i class="control-icon fi-calendar"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="small-10 medium-offset-0 medium-2 columns left">
+                <!--<div class="small-2 medium-1 columns">-->
+                    <!--<i class="calendar-control control-icon fi-calendar large"></i>-->
+                <!--</div>-->
+                <div class="small-10 medium-6 large-3 columns">
                     <a class="proceed-button" href="/mocks/tickets-search.html">
-                        <i class="control-icon fi-arrow-right"></i>
-                        <span class="hide-for-medium-only">Search tickets</span>
+                        Search tickets
                     </a>
                 </div>
             </div>

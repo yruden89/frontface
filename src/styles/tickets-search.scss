@@ -9,13 +9,13 @@
     background-attachment: fixed;
     padding-bottom: 1px;
 
-    $header-height:5vh;
+    $header-height:2.5rem;
     .header{
         height: $header-height;
         line-height: $header-height;
         padding: 0 $wrapper-padding;
         color: #ffffff;
-        font-size: $header-height - 2vh;
+        font-size: $header-height - 0.5rem;
         box-shadow: 0 3px 5px 0 rgba(0,0,0,0.8);
         text-shadow: $text-shadow;
         font-weight: 100;
@@ -49,6 +49,15 @@
         font-size: 1.7rem;
     }
 
+    table{
+        .button{
+            color: #ffffff;
+            margin: 0;
+            float: right;
+            padding: 0.5rem 1rem;
+        }
+    }
+
     $table-background: rgba(255,255,255,0.5);
 
     table,tr{
@@ -65,11 +74,6 @@
             font-size: 1rem;
             background: $table-background;
             @include table-override;
-
-            a{
-                color: $utilits-color-dark;
-                @include controlActions(color, $utilits-color-dark)
-            }
 
             tbody{
                 @include table-override;

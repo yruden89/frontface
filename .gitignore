@@ -33,3 +33,4 @@ dist
 /src/main.js
 /.idea
 /src/styles/css
+/src/styles/bower_components
