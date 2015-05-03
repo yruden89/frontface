@@ -1,6 +1,10 @@
-$utilits-color: #73A5FF;
+$header-font-family: Roboto, Arial, sans-serif;
+$utilits-color: #73A5FF;;
+$utilits-color-dark: #0d63ff;
+$secondary-text-color: rgba(255,255,255,0.7);
 $text-shadow:1px 1px 0 #000;
-$blackout: rgba(0,0,0,0.6);
+$blackout: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5));;
+$wrapper-padding: 10px;
 $breakpoints: (
     'medium': 800px
 );

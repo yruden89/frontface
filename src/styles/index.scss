@@ -4,21 +4,18 @@ $secondary-text-size: 1.2rem;
 $form-padding: 20px;
 
 .landing-page{
-    $secondary-text-color: rgba(255,255,255,0.7);
     $form-item-height-small: 9vh;
     $form-item-height: 4vh;
-
-
+    $landing-bg-image: url("/images/st_martin.jpg") right 0 no-repeat;
 
     height: 100vh;
-    background: url("/images/st_martin.jpg") right 0 no-repeat ;
+    background: #{$blackout}, #{$landing-bg-image} ;
     background-size: cover;
     text-shadow: $text-shadow;
 
-    .landing-wrapper{
-        padding: 0 10px;
+    .wrapper{
         height: 100%;
-        background: $blackout;
+        padding: 0 10px;
     }
 
     .landing-header{
@@ -39,8 +36,8 @@ $form-padding: 20px;
     .login-info{
         margin-top: 2rem;
         color: $secondary-text-color;
-        font-size: $secondary-text-size;
-        line-height: $secondary-text-size;
+        font-weight: 100;
+        font-family: $header-font-family;
     }
 
     .flight-places-form{
@@ -70,6 +67,9 @@ $form-padding: 20px;
         .proceed-button{
             width: 100%;
             color: #ffffff;
+            font-weight: 100;
+            font-family: $header-font-family;
+            text-shadow: none   ;
             height: $form-item-height-small;
             font-size: $secondary-text-size;
             line-height: $form-item-height-small;
@@ -93,9 +93,11 @@ $form-padding: 20px;
     /*==============================================================================================================*/
     @media #{$medium-up}{;
 
-        .landing-wrapper{
-            background: none;
-            padding: 15vh 50px 0;
+        background: #{$landing-bg-image};
+        background-size: cover;
+
+        .wrapper{
+            padding-top: 15vh;
         }
 
         .landing-header{
@@ -103,7 +105,7 @@ $form-padding: 20px;
             text-shadow: 1px 1px 0 #000;
             font-size: 4rem;
             line-height: 4rem;
-            background: $blackout;
+            background: #{$blackout};
             display: inline-block;
 
             .call{
@@ -113,7 +115,7 @@ $form-padding: 20px;
         }
 
         .flight-places-form{
-            background: $blackout;
+            background: #{$blackout};
             padding: $form-padding;
             margin-top: 5vh;
 
@@ -137,12 +139,16 @@ $form-padding: 20px;
                 margin-top: 0;
                 font-size: $secondary-text-size;
                 line-height: $secondary-text-size + 0.4rem;
+                font-family: $header-font-family;
+                font-weight: 100;
             }
 
             .proceed-button{
                 height: $form-item-height;
                 font-size: $form-item-height - 2vh;
                 line-height: $form-item-height;
+                font-family: $header-font-family;
+                font-weight: 100;
             }
 
 
@@ -156,10 +162,8 @@ $form-padding: 20px;
 
     /*==============================================================================================================*/
     @media #{$xlarge-up}{
-        .landing-wrapper{
-            padding: 15vh 0 0;
-            width: 1200px;
-            margin: 0 auto;
+        .wrapper{
+            padding-top: 15vh;
         }
     }
 

@@ -1,3 +1,122 @@
-.tickets-search{
+@import "variables";
+@import "foundation/scss/foundation/components/global";
+@import "bower_components/sass-css3-mixins/css3-mixins";
 
+.tickets-search{
+    min-height: 100vh;
+    background: #{$blackout}, url("/images/picturesque-takeoff.jpg") center center no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 1px;
+
+    $header-height:5vh;
+    .header{
+        height: $header-height;
+        line-height: $header-height;
+        padding: 0 $wrapper-padding;
+        color: #ffffff;
+        font-size: $header-height - 2vh;
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,0.8);
+        text-shadow: $text-shadow;
+        font-weight: 100;
+        font-family: $header-font-family;
+        @include background-gradient(#000,#444);
+        @include clearfix;
+    }
+
+    .wrapper{
+        padding: 0 $wrapper-padding;
+    }
+
+    .route{
+        color: #ffffff;
+        margin-top: 0%;
+        text-align:center;
+        padding-top: 1rem;
+        font-size: 2.5rem;
+        line-height: 2.7rem;
+        text-shadow: $text-shadow;
+    }
+
+    .filters{
+        label{
+            color:$secondary-text-color;
+        }
+    }
+
+    .tickets-header{
+        color: #ffffff;
+        font-size: 1.7rem;
+    }
+
+    $table-background: rgba(255,255,255,0.5);
+
+    table,tr{
+        background: $table-background;
+    }
+
+    @media #{$small-only} {
+
+        @mixin table-override{
+            display: block;
+        }
+        table{
+            display: block;
+            font-size: 1rem;
+            background: $table-background;
+            @include table-override;
+
+            a{
+                color: $utilits-color-dark;
+                @include controlActions(color, $utilits-color-dark)
+            }
+
+            tbody{
+                @include table-override;
+            }
+
+            th{
+                display: none;
+            }
+
+            tr{
+                margin: 0.5rem;
+                padding: 0.5rem;
+                background: rgba(255,255,255,0.3);
+                @include table-override;
+
+                &:first-child{
+                    display: none;
+                }
+            }
+
+            td{
+                padding: 0.4rem 0.5rem 0.4rem 0;
+                word-wrap: break-word;
+                display: flex;
+                font-size: 1rem;
+
+                &::before{
+                    padding-right: 0.5rem;
+                    display: block;
+                    text-align: right;
+                    flex-shrink: 0;
+                    content: attr(data-label);
+                    width: 50%;
+                }
+
+                &::after{
+                    content: " ";
+                    clear: both;
+                }
+            }
+        }
+    }
+
+    @media #{$medium-up} {
+        .filters{
+            padding-top: 10px;
+            background: rgba(255,255,255,0.2);
+        }
+    }
 }
