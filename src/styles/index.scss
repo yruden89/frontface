@@ -4,12 +4,11 @@ $secondary-text-size: 1.2rem;
 $form-padding: 20px;
 
 .landing-page{
-    $form-item-height-small: 9vh;
-    $form-item-height: 4vh;
+    $form-item-height-small: 3rem;
     $landing-bg-image: url("/images/st_martin.jpg") right 0 no-repeat;
 
     min-height: 100vh;
-    padding-bottom: 1px;
+    padding-bottom: 1rem;
     background: #{$blackout}, #{$landing-bg-image} ;
     background-size: cover;
     text-shadow: $text-shadow;
@@ -20,11 +19,12 @@ $form-padding: 20px;
         padding: 0 10px;
     }
 
+    $landing-header-height--small:5.3rem;
     .landing-header{
-        padding-top: 15vh;
+        padding-top: 4.7rem;
         color: white;
-        font-size: 15vh;
-        line-height: 15vh;
+        font-size: $landing-header-height--small;
+        line-height: $landing-header-height--small;
         margin: 0;
 
         .call{
@@ -56,7 +56,7 @@ $form-padding: 20px;
 
         input{
             height: $form-item-height-small;
-            font-size: $form-item-height-small - 3vh;
+            font-size: $form-item-height-small - 1rem;
         }
 
         .calendar-control{
@@ -67,11 +67,12 @@ $form-padding: 20px;
 
         }
 
+        $control-icon-height:$form-item-height-small - 0.2rem;
         .control-icon{
             display: inline-block;
             color: #ffffff;
-            font-size: $form-item-height-small - 0.4vh;
-            line-height: $form-item-height-small - 0.4vh;
+            font-size: $control-icon-height;
+            line-height: $control-icon-height;
 
         }
 
@@ -110,7 +111,7 @@ $form-padding: 20px;
         background-size: cover;
 
         .wrapper{
-            padding-top: 15vh;
+            padding-top: 10rem;
         }
 
         .landing-header{
@@ -130,18 +131,7 @@ $form-padding: 20px;
         .flight-places-form{
             background: #{$blackout};
             padding: $form-padding;
-            margin-top: 5vh;
-
-            input{
-                height: $form-item-height;
-                font-size: $form-item-height - 2vh;
-            }
-
-            .control-icon{
-                font-size: $form-item-height - 0.4vh;
-                line-height: $form-item-height  - 0.4vh;
-
-            }
+            margin-top: 3rem;
 
             .row{
                 max-width: 100%;
@@ -156,9 +146,6 @@ $form-padding: 20px;
             }
 
             .proceed-button, .postfix.button{
-                height: $form-item-height;
-                font-size: $form-item-height - 2vh;
-                line-height: $form-item-height;
                 font-family: $header-font-family;
                 font-weight: 100;
             }
@@ -171,20 +158,10 @@ $form-padding: 20px;
     @media #{$large-up}{
         .flight-places-form{
             input{
-                height: $form-item-height;
-                font-size: $form-item-height - 2vh;
+                font-size: 1rem;
                 margin: 0;
             }
         }
     }
-
-    /*==============================================================================================================*/
-    @media #{$xlarge-up}{
-        .wrapper{
-            padding-top: 15vh;
-        }
-    }
-
-
 }
 
