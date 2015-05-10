@@ -36,10 +36,16 @@ h1,h2,h3,h4,h5,h6{
     line-height: 50px;
 }
 
+input:focus{
+    box-shadow: inset 0 0 10px 0px $utilits-color-dark;
+    transition: box-shadow 400ms ease ;
+}
+
 .wrapper{
     height: 100%;
     padding: 0 10px;
 }
+
 
 @media #{$medium-up}{
     .wrapper.wrapper.wrapper{
