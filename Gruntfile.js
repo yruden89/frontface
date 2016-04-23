@@ -30,7 +30,7 @@ module.exports = function (grunt) {
         },
 
         webpack: {
-            options: webpackDistConfig,
+            options: webpackDevConfig,
             dist: {
                 cache: false
             }
@@ -118,7 +118,38 @@ module.exports = function (grunt) {
                         dest: '<%= pkg.dist %>/images/'
                     }
                 ]
+            },
+            dev: {
+                files: [
+                    {
+                        flatten: true,
+                        expand: true,
+                        src: ['<%= pkg.src %>/index.html'],
+                        dest: '<%= pkg.dist %>/',
+                        filter: 'isFile'
+                    },
+                    {
+                        flatten: true,
+                        expand: true,
+                        src: ['<%= pkg.src %>/images/*'],
+                        dest: '<%= pkg.dist %>/images/'
+                    },
+                    {
+                        flatten: true,
+                        expand: true,
+                        src: ['<%= pkg.src %>/styles/css/**'],
+                        dest: '<%= pkg.dist %>/styles/css'
+                    },
+                    {
+                        flatten: true,
+                        expand: true,
+                        src: ['<%= pkg.src %>/styles/fonts/**'],
+                        dest: '<%= pkg.dist %>/styles/fonts'
+                    }
+                ]
             }
+
+
         },
 
         injector:{
@@ -164,20 +195,33 @@ module.exports = function (grunt) {
             sass:{
                 files:["src/styles/*.scss"],
                 tasks:["sass:dev"]
+            },
+            jsDev: {
+                files: ["src/**/*.js", "src/**/*.jsx"],
+                tasks: ["webpack"]
+            }
+
+        },
+
+        'http-server': {
+            dev: {
+                root: "./dist",
+                port: 8000,
+                runInBackground: true
             }
         }
     });
 
-    grunt.registerTask('serve', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'open:dist', 'connect:dist']);
-        }
-
-        grunt.task.run([
-            'open:dev',
-            'webpack-dev-server'
-        ]);
-    });
+    //grunt.registerTask('serve', function (target) {
+    //    if (target === 'dist') {
+    //        return grunt.task.run(['build', 'open:dist', 'connect:dist']);
+    //    }
+    //
+    //    grunt.task.run([
+    //        'open:dev',
+    //        'webpack-dev-server'
+    //    ]);
+    //});
 
     grunt.registerTask('test', ['karma']);
 
@@ -185,7 +229,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', []);
 
-    grunt.registerTask('dev', ['clean', 'open:dev', 'webpack-dev-server']);
+    grunt.registerTask('dev', ['clean', 'webpack', 'copy:dev', "http-server:dev", "watch:jsDev"]);
 
     grunt.registerTask('mocks', ["sass:dev", "injector:mocks","connect:mocks", "open:mocks", "watch"]);
 
