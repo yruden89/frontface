@@ -89,7 +89,8 @@ $form-padding: 20px;
             font-size: $secondary-text-size;
             text-shadow: none;
             height: $form-item-height-small;
-
+            margin-bottom: 0;
+            padding: 0;
             line-height: $form-item-height-small;
 
             background: $utilits-color;

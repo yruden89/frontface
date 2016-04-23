@@ -1,15 +1,12 @@
 'use strict';
 
-var React = require('react/addons');
-var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
+import React from 'react/addons';
+import {RouteHandler} from 'react-router';
 
-var LetsFlyApp = React.createClass({
+export default React.createClass({
     render: function () {
         return (
             <RouteHandler/>
         );
     }
 });
-
-module.exports = LetsFlyApp;

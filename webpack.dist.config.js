@@ -18,7 +18,7 @@ module.exports = {
 
   debug: false,
   devtool: false,
-  entry: './src/components/main.js',
+  entry: './src/components/main.jsx',
 
   stats: {
     colors: true,
@@ -54,6 +54,10 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
+    }, {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loader: 'babel'
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'

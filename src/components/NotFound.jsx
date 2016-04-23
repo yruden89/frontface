@@ -1,8 +1,8 @@
 'use strict';
 
-var React = require('react/addons');
+import React from 'react/addons';
 
-var NotFound = React.createClass({
+export default React.createClass({
     render: function () {
         return (
             <h1>
@@ -12,5 +12,3 @@ var NotFound = React.createClass({
         );
     }
 });
-
-module.exports = NotFound;

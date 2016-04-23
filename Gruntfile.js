@@ -42,7 +42,8 @@ module.exports = function (grunt) {
                 port: 8000,
                 webpack: webpackDevConfig,
                 publicPath: '/assets/',
-                contentBase: './<%= pkg.src %>/'
+                contentBase: './<%= pkg.src %>/',
+                historyApiFallback: true
             },
 
             start: {
@@ -137,7 +138,7 @@ module.exports = function (grunt) {
                     }
                 },
                 files:{
-                    "src/mocks/index.html":["src/styles/css/*.css"],
+                    "src/mocks/index.html":["src/mocks/mock_scripts/*.js", "src/styles/css/*.css", ],
                     "src/mocks/tickets-search.html":["src/styles/css/*.css"]
                 }
             }
@@ -157,7 +158,7 @@ module.exports = function (grunt) {
         watch: {
             mocks:{
                 options:{ livereload:true },
-                files:["src/mocks/*.html", "src/styles/css/*.css"],
+                files:["src/mocks/*.html", "src/styles/css/*.css", "src/mocks/mock_scripts/*.js"],
                 tasks:[]
             },
             sass:{
@@ -183,6 +184,8 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['clean', 'copy', 'webpack']);
 
     grunt.registerTask('default', []);
+
+    grunt.registerTask('dev', ['clean', 'open:dev', 'webpack-dev-server']);
 
     grunt.registerTask('mocks', ["sass:dev", "injector:mocks","connect:mocks", "open:mocks", "watch"]);
 

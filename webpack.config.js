@@ -11,15 +11,15 @@ module.exports = {
 
   output: {
     filename: 'main.js',
-    publicPath: '/assets/'
+    publicPath: '/assets/',
+    path: './dist/assets'
   },
 
   cache: true,
   debug: true,
-  devtool: false,
+  devtool: "source-map",
   entry: [
-      'webpack/hot/only-dev-server',
-      './src/components/main.js'
+      './src/components/main.jsx'
   ],
 
   stats: {
@@ -41,16 +41,12 @@ module.exports = {
     preLoaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'jsxhint'
+      loader: 'babel'
     }],
     loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'react-hot'
-    }, {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: 'jsx-loader'
+        loader: 'babel'
     },{
       test: /\.scss/,
       loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
@@ -65,9 +61,7 @@ module.exports = {
       loader: "html"
     }]
   },
-
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
 
