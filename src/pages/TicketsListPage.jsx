@@ -3,14 +3,23 @@
 //css
 require('../styles/css/tickets-search.css');
 
+//import libs
 import React from'react/addons';
 import {State} from 'react-router'
-import GenericPage from './GenericPage.jsx';
-import TicketsList from 'components/TicketsList.jsx';
-import TicketSearchStore from "stores/TicketsSearchStore.js";
-import {SearchTickets} from "actions/TicketListActions";
 import Reflux from 'reflux';
 import helper from 'helpers/generalHelpers'
+
+//import actions
+import {SearchTickets} from "actions/TicketListActions";
+
+//import stores
+import TicketSearchStore from "stores/TicketsSearchStore.js";
+
+//import components
+import GenericPage from './GenericPage.jsx';
+import TicketsList from 'components/TicketsList.jsx';
+import LoadingMask from  'components/LoadingMask.jsx'
+
 
 export default React.createClass({
     mixins: [State, Reflux.connect(TicketSearchStore, "tickets")],
@@ -73,6 +82,7 @@ export default React.createClass({
                             <option value="badyl-avia">Бадыль Авиа</option>
                             <option value="luftwaffe">Люфтваффе</option>
                             <option value="natural_born">Рожденые ползать</option>
+                            <option value="unknown">Неизвестная компания</option>
                         </select>
                     </label>
                     <label className="small-12 medium-4 large-2 columns">
@@ -99,7 +109,10 @@ export default React.createClass({
                     </label>
                 </form>
                 <h2 className="tickets-header">Билеты:</h2>
-                <TicketsList tickets={this.state.tickets}></TicketsList>
+
+                <LoadingMask action={SearchTickets} store={TicketSearchStore}>
+                    <TicketsList tickets={this.state.tickets}></TicketsList>
+                </LoadingMask>
             </GenericPage>
         );
     },

@@ -1,6 +1,6 @@
 import Reflux from "reflux"
 import {SearchTickets} from "actions/TicketListActions";
-import superAgent from "superagent";
+import superAgent from "helpers/superagentSetup";
 
 export default Reflux.createStore({
 
@@ -10,7 +10,7 @@ export default Reflux.createStore({
     },
     onSearchTickets: function (filters) {
         superAgent
-            .get("//localhost:3000/getTickets")
+            .get("/getTickets")
             .query(filters)
             .end(function (err, response) {
                 if(err) return;

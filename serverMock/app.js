@@ -10,8 +10,17 @@ app.get('/getTickets', function (req, res) {
     var url = require('url');
     var urlParsed = url.parse(req.url, true);
     var query = urlParsed.query;
+
     res.set("Access-Control-Allow-Origin", "*");
-    res.send(ticketsList.searchTickets(query));
+
+    if(query.company === "unknown"){
+        res.status(500).send("KABOOOM!");
+        return;
+    }
+
+    setTimeout(function () {
+        res.send(ticketsList.searchTickets(query));
+    }, 3000);
 });
 
 app.listen(3000, function () {
