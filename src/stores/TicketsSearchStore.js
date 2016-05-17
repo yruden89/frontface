@@ -1,11 +1,10 @@
 import Reflux from "reflux"
-import {SearchTickets} from "actions/TicketListActions";
-import superAgent from "helpers/superagentSetup";
+import {SearchTickets} from "actions/TicketListActions"
+import superAgent from "helpers/superagentSetup"
 
 export default Reflux.createStore({
 
     init: function () {
-        this.searchProps = {};
         this.listenTo(SearchTickets, "onSearchTickets");
     },
     onSearchTickets: function (filters) {

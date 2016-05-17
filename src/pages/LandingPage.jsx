@@ -3,11 +3,19 @@
 //css
 require('../styles/css/index.css');
 
+//import libs
 import React from 'react/addons';
 import Reflux from 'reflux';
 import {Link, Navigation} from 'react-router';
+
+//import actions
 import {SetSearchProp} from "actions/LandingPageActions.js"
-import LandingPageStore from "stores/LandingPageStore";
+
+//import stores
+import LandingPageStore from "stores/LandingPageStore"
+
+//import components
+import Autocomplete from "components/CitiesAutocomplete.jsx"
 
 export default React.createClass({
     mixins:[Reflux.ListenerMixin, Navigation],
@@ -53,10 +61,10 @@ export default React.createClass({
                         <p className="login-info">You aren`t new? <a href="#">Login.</a></p>
                         <div className="row">
                             <div className="small-10 medium-6 large-3 columns">
-                                <input type="text" autoFocus placeholder="from" name="from" onChange={this.setDeparture}/>
+                                <Autocomplete autofocus placeholder="from" name="from" onChange={this.setDeparture}/>
                             </div>
                             <div className="small-10 medium-6 large-3 columns">
-                                <input type="text" placeholder="to" name="to" onChange={this.setArrival}/>
+                                <Autocomplete type="text" placeholder="to" name="to" onChange={this.setArrival}/>
                             </div>
                             <div className="small-10 medium-6 large-3 columns">
                                 <div className="row collapse">
