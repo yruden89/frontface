@@ -7,6 +7,8 @@ var mountFolder = function (connect, dir) {
 var webpackDistConfig = require('./webpack.dist.config.js'),
     webpackDevConfig = require('./webpack.config.js');
 
+webpackDevConfig.entry.unshift("webpack-dev-server/client?http://localhost:8000/");
+
 module.exports = function (grunt) {
     // Let *load-grunt-tasks* require everything
     require('load-grunt-tasks')(grunt);
@@ -38,7 +40,6 @@ module.exports = function (grunt) {
 
         'webpack-dev-server': {
             options: {
-                hot: true,
                 port: 8000,
                 webpack: webpackDevConfig,
                 publicPath: '/assets/',
@@ -213,24 +214,13 @@ module.exports = function (grunt) {
         }
     });
 
-    //grunt.registerTask('serve', function (target) {
-    //    if (target === 'dist') {
-    //        return grunt.task.run(['build', 'open:dist', 'connect:dist']);
-    //    }
-    //
-    //    grunt.task.run([
-    //        'open:dev',
-    //        'webpack-dev-server'
-    //    ]);
-    //});
-
     grunt.registerTask('test', ['karma']);
 
     grunt.registerTask('build', ['clean', 'copy', 'webpack']);
 
     grunt.registerTask('default', []);
 
-    grunt.registerTask('dev', ['clean', 'webpack', 'copy:dev', "http-server:dev", "watch:jsDev"]);
+    grunt.registerTask('dev', ["webpack-dev-server"]);
 
     grunt.registerTask('mocks', ["sass:dev", "injector:mocks","connect:mocks", "open:mocks", "watch"]);
 
