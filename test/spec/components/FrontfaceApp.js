@@ -1,7 +1,7 @@
 'use strict';
 
 describe('FrontfaceApp', function () {
-  var React = require('react/addons');
+  var React = require('react');
   var FrontfaceApp, component;
 
   beforeEach(function () {

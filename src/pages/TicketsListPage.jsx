@@ -4,8 +4,8 @@
 require('../styles/css/tickets-search.css');
 
 //import libs
-import React from'react/addons';
-import {State} from 'react-router'
+import React from'react';
+import {withRouter} from 'react-router'
 import Reflux from 'reflux';
 import helper from 'helpers/generalHelpers'
 
@@ -21,8 +21,8 @@ import TicketsList from 'components/TicketsList.jsx';
 import LoadingMask from  'components/LoadingMask.jsx'
 
 
-export default React.createClass({
-    mixins: [State, Reflux.connect(TicketSearchStore, "tickets")],
+let TicketsListPage =  React.createClass({
+    mixins: [Reflux.connect(TicketSearchStore, "tickets")],
 
     getInitialState: function () {
         return {
@@ -43,7 +43,7 @@ export default React.createClass({
     },
 
     componentWillMount: function() {
-        let query = this.getQuery();
+        let { query } = this.props.location;
         let departure = query.from;
         let {to, when} = query;
         if(!departure || ! to || !when){
@@ -92,8 +92,8 @@ export default React.createClass({
                     <label className="small-12 medium-4 large-3 columns">
                         Места:
                         <select name="flightClass" value={this.state.seatsClass} onChange={this.setSeatsClass}>
-                            <option value="" selected>--</option>
-                            <option value="econom" selected>Эконом</option>
+                            <option value="">--</option>
+                            <option value="econom">Эконом</option>
                             <option value="buisness">Бизнес</option>
                             <option value="first">Первый</option>
                         </select>
@@ -101,7 +101,7 @@ export default React.createClass({
                     <label className="small-12 medium-4  large-2 columns">
                         Сортировать по:
                         <select name="sorting" value={this.state.sorting} onChange={this.setSorting}>
-                            <option value="none" selected>---</option>
+                            <option value="none">---</option>
                             <option value="byPrice">цене</option>
                             <option value="byFligthLength">времени полета</option>
                             <option value="byStartTime">времени вылета</option>
@@ -155,3 +155,5 @@ export default React.createClass({
     }
 
 });
+
+export default withRouter(TicketsListPage)

@@ -62,6 +62,7 @@ var  getRandomCompany = function () {
 var generateTickets = function () {
     for (var i = 0; i < 40; i++) {
         tickets.push({
+            id: i,
             aircompany: getRandomCompany(),
             flightStart: Time.getRandomTime().toString(),
             flightEnd: Time.getRandomTime().toString(),

@@ -6,6 +6,7 @@
  */
 'use strict';
 var webpack = require('webpack');
+var CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = {
 
@@ -63,7 +64,8 @@ module.exports = {
     }]
   },
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new CircularDependencyPlugin()
   ]
 
 };

@@ -1,7 +1,7 @@
 "use strict";
 require('../styles/css/loading-animation.css');
 
-import React from "react/addons"
+import React from "react"
 
 export default React.createClass({
     getInitialState: function() {

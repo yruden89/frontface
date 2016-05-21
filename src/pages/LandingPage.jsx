@@ -4,9 +4,9 @@
 require('../styles/css/index.css');
 
 //import libs
-import React from 'react/addons';
+import React from 'react';
 import Reflux from 'reflux';
-import {Link, Navigation} from 'react-router';
+import {withRouter} from 'react-router';
 
 //import actions
 import {SetSearchProp} from "actions/LandingPageActions.js"
@@ -17,8 +17,8 @@ import LandingPageStore from "stores/LandingPageStore"
 //import components
 import Autocomplete from "components/CitiesAutocomplete.jsx"
 
-export default React.createClass({
-    mixins:[Reflux.ListenerMixin, Navigation],
+let LandingPage =  React.createClass({
+    mixins:[Reflux.ListenerMixin],
     getInitialState: function() {
         return { departure: "", arrival: "", flightDate: "", isValid: false}
     },
@@ -43,10 +43,13 @@ export default React.createClass({
     },
     onSubmit: function(e) {
         e.preventDefault();
-        this.transitionTo("ticketsList", {}, {
-            from: this.state.departure,
-            to: this.state.arrival,
-            when: this.state.flightDate
+        this.props.router.push({
+            pathname: "tickets-list",
+            query: {
+                from: this.state.departure,
+                to: this.state.arrival,
+                when: this.state.flightDate
+            }
         });
     },
     render: function () {
@@ -94,3 +97,5 @@ export default React.createClass({
         );
     }
 });
+
+export default withRouter(LandingPage);

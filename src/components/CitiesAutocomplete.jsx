@@ -4,7 +4,7 @@
 require('../styles/css/awesomeplete.css');
 
 //import libs
-import React from "react/addons"
+import React from "react"
 import Reflux from "reflux"
 import Awesomeplete from "Awesomplete"
 import _ from "lodash"
@@ -30,12 +30,11 @@ export default React.createClass({
         name: React.PropTypes.string
     },
     componentDidMount: function() {
-        let wrapper =  this.getDOMNode(this.refs.wrapper);
+        let wrapper =  this.refs.wrapper;
         this.autocompleteInput = wrapper.querySelector("input");
         this.awesomplete = new Awesomeplete(this.autocompleteInput);
 
-        this.searchCities =  _.debounce(this.searchCities.bind(this), DEBOUNCE_RATE);
-        this.onItemSelected = this.onItemSelected.bind(this);
+        this.searchCities =  _.debounce(this.searchCities, DEBOUNCE_RATE);
         this.autocompleteInput.addEventListener("input", this.onAutocompleteInput);
         this.autocompleteInput.addEventListener("awesomplete-selectcomplete", this.onItemSelected);
 

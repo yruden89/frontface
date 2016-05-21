@@ -1,12 +1,11 @@
 'use strict';
 
-import React from 'react/addons';
-import {RouteHandler} from 'react-router';
+import React from 'react';
 
 export default React.createClass({
     render: function () {
         return (
-            <RouteHandler/>
+            <div>{this.props.children}</div>
         );
     }
 });
