@@ -1,7 +1,7 @@
 'use strict';
 
 //css
-require('../styles/css/index.css');
+import "../styles/css/index.css";
 
 //import libs
 import React from 'react';
@@ -16,6 +16,7 @@ import LandingPageStore from "stores/LandingPageStore"
 
 //import components
 import Autocomplete from "components/CitiesAutocomplete.jsx"
+import DatePicker from 'components/DatePicker.jsx';
 
 let LandingPage =  React.createClass({
     mixins:[Reflux.ListenerMixin],
@@ -34,9 +35,9 @@ let LandingPage =  React.createClass({
         this.setState({arrival: e.target.value});
         SetSearchProp("arrival", e.target.value)
     },
-    setFlightDate: function (e) {
-        this.setState({flightDate: e.target.value});
-        SetSearchProp("flightDate", e.target.value)
+    setFlightDate: function (date) {
+        this.setState({flightDate: date});
+        SetSearchProp("flightDate", date);
     },
     onValidChange: function(data) {
         this.setState({isValid: data.isValid});
@@ -70,16 +71,7 @@ let LandingPage =  React.createClass({
                                 <Autocomplete type="text" placeholder="to" name="to" onChange={this.setArrival}/>
                             </div>
                             <div className="small-10 medium-6 large-3 columns">
-                                <div className="row collapse">
-                                    <div className="small-9 columns">
-                                        <input placeholder="dd/mm/yy" type="text" name="flightDate" onChange={this.setFlightDate}/>
-                                    </div>
-                                    <div className="small-3 columns">
-                                        <a className="postfix button" href="#">
-                                            <i className="control-icon fi-calendar"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                <DatePicker  onChange={this.setFlightDate}/>
                             </div>
                             <div className="small-10 medium-6 large-3 columns">
                                 <button type="submit" className="proceed-button" to="tickets-list" disabled={!this.state.isValid}>
