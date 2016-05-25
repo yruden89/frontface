@@ -172,7 +172,8 @@ module.exports = function (grunt) {
                 files:{
                     "src/mocks/index.html":["src/mocks/mock_scripts/*.js", "src/styles/css/*.css" ],
                     "src/mocks/tickets-search.html":["src/styles/css/*.css"],
-                    "src/mocks/loading.html": ["src/styles/css/*.css"]
+                    "src/mocks/loading.html": ["src/styles/css/*.css"],
+                    "src/mocks/purchase-form.html": ["src/styles/css/*.css"]
                 }
             }
         },

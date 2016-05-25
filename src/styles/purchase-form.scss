@@ -1,0 +1,70 @@
+@import "variables";
+@import "foundation/scss/foundation/components/global";
+
+
+.purchase-form{
+    $section-padding: 10px 15px;
+
+    .heading{
+        color: #FFFFFF;
+    }
+
+    .ticket-section{
+        background: #FFFFFF;
+
+        &-header{
+            background: $utilits-color;
+            color: #FFFFFF;
+            padding: $section-padding;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        &-data {
+            color: #000;
+            font-family: monospace;
+            padding: $section-padding;
+            font-size: 1rem;
+        }
+
+        &-airport-codes {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+    }
+
+    .purchase-form{
+        background: #FFFFFF;
+        color: #000000;
+        padding: $section-padding;
+        margin-top: 1.5rem;
+    }
+
+    .price-calc{
+        font-size: 2.3125rem;
+        line-height: 2.3125rem;
+    }
+
+    .calc-value{
+        display: inline-block;
+        position: relative;
+    }
+
+    .calc-value-subtext{
+        position: absolute;
+        bottom: -0.7rem;
+        left: 0.4rem;
+        font-size: 0.7rem;
+        line-height: 0.7rem;
+    }
+
+    .passenger-info{
+        border-bottom: 1px solid #eeeeee;
+        margin-bottom: 0.6rem;
+
+        &:last-child{
+            border-bottom: none;
+            margin-bottom: 0.6rem;
+        }
+    }
+}

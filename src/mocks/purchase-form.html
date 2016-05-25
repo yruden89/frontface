@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Purchase</title>
+    <!-- injector:css -->
+    <link rel="stylesheet" href="/styles/css/1-main.css">
+    <link rel="stylesheet" href="/styles/css/awesomeplete.css">
+    <link rel="stylesheet" href="/styles/css/common.css">
+    <link rel="stylesheet" href="/styles/css/index.css">
+    <link rel="stylesheet" href="/styles/css/loading-animation.css">
+    <link rel="stylesheet" href="/styles/css/purchase-form.css">
+    <link rel="stylesheet" href="/styles/css/rc-calendar-styles.css">
+    <link rel="stylesheet" href="/styles/css/tickets-search.css">
+    <!-- endinjector -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="tickets-search">
+    <header class="header">
+        <div class="wrapper">
+            <span class="left">Let`s fly</span>
+            <a class="right" href="#">Войти</a>
+        </div>
+    </header>
+    <div class="wrapper purchase-form">
+        <h1 class="heading">Приобрести билет(ы):</h1>
+        <div class="ticket-section">
+            <div class="ticket-section-header">
+                <i class="fi-cloud"></i> Бадыль авиа
+            </div>
+            <div class="ticket-section-data">
+                <div class="row">
+                    <div class="medium-4 columns">
+                        <div class="ticket-section-airport-codes">
+                            LAX-JFK
+                        </div>
+                        <div>
+                            (Бирюлево-Егорьевск)
+                        </div>
+                    </div>
+                    <div class="medium-8 columns">
+                        <div class="row">
+                            <div class="medium-3 columns text-right">Рейс:</div>
+                            <div class="medium-8 columns">АА12345</div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-3 columns text-right">Вылет:</div>
+                            <div class="medium-8 columns">12.04.2016 12:00</div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-3 columns text-right">Посадка:</div>
+                            <div class="medium-8 columns">13.04.2016 04:00</div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-3 columns text-right">Время полета:</div>
+                            <div class="medium-8 columns">16ч.</div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-3 columns text-right">Класс:</div>
+                            <div class="medium-8 columns">Бизнес</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="purchase-form">
+            <fieldset>
+                <legend>Количество билетов:</legend>
+                <div class="row">
+                    <div class="columns medium-2">
+                        <input id="tickets-num" type="number" name="tickets-num" value="1"/>
+                    </div>
+                    <div class="columns medium-10 price-calc">
+                        &times;
+                        <span class="calc-value">100$
+                            <span class="calc-value-subtext">Цена билета</span>
+                        </span>
+                        +
+                        <span class="calc-value">10$
+                            <span class="calc-value-subtext">Страховка</span>
+                        </span>
+                        =
+                        <span class="calc-value">110$
+                            <span class="calc-value-subtext">Итого</span>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Оплата:</legend>
+                <div class="row">
+                    <div class="medium-5 columns">
+                        <label>
+                            Электронная почта:
+                            <input type="text" placeholder="yours@email.com"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-5 columns">
+                        <label>
+                            Номер карты:
+                            <input type="text" name="card-number" placeholder="xxxx-xxxx-xxxx"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-5 columns">
+                        <label>
+                            CVV2-код
+                            <input type="text" name="cvv" placeholder="xxx"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-5 columns">
+                        <label>
+                            Приобрести страховку (10$)
+                            <input type="checkbox" checked name="insurance"/>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Данные о пассажирах</legend>
+                <div class="row passenger-info">
+                    <div class="medium-5 columns">
+                        <label>
+                            Имя и Фамилия пассажира(целиком):
+                            <input type="text" name="passenger-name" placeholder="Иванов Иван"/>
+                        </label>
+                    </div>
+                    <div class="medium-5 columns">
+                        <label>
+                            Номер паспорта:
+                            <input type="text" name="pass" placeholder="xxxxxx"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="row passenger-info">
+                    <div class="medium-5 columns">
+                        <label>
+                            Имя и Фамилия пассажира(целиком):
+                            <input type="text" name="passenger-name" placeholder="Иванов Иван"/>
+                        </label>
+                    </div>
+                    <div class="medium-5 columns">
+                        <label>
+                            Номер паспорта:
+                            <input type="text" name="pass" placeholder="xxxxxx"/>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="row">
+                <button class="button right" type="submit">Оплатить</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+
+</html>

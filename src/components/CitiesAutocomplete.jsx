@@ -38,7 +38,7 @@ export default React.createClass({
         this.autocompleteInput.addEventListener("input", this.onAutocompleteInput);
         this.autocompleteInput.addEventListener("awesomplete-selectcomplete", this.onItemSelected);
 
-        if(this.props.autocomplete == true){
+        if(this.props.autofocus == true){
             this.autocompleteInput.focus();
         }
 
