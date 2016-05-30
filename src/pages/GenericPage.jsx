@@ -5,7 +5,7 @@ import React from "react"
 export default React.createClass({
     render: function () {
         return (
-            <div className="general-page" {...this.props}>
+            <div {...this.props} className={ `general-page ${this.props.className || ""}` }>
                 <header className="header">
                     <div className="wrapper">
                         <span className="left">Let`s fly</span>
