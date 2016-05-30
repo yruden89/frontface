@@ -1,5 +1,6 @@
 @import "variables";
 @import "foundation/scss/foundation/components/global";
+@import "bower_components/sass-css3-mixins/css3-mixins";
 
 
 /*================= Fonts Start =====================================================*/
@@ -213,3 +214,33 @@ input[type="radio"] {
 .button{
     color: #FFFFFF;
 }
+
+/*================= common layout start ===============================================================*/
+
+.general-page {
+    min-height: 100vh;
+    background: #{$blackout}, url("/images/picturesque-takeoff.jpg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 1px;
+
+    $header-height: 2.5rem;
+    .header {
+        height: $header-height;
+        line-height: $header-height;
+        padding: 0 $wrapper-padding;
+        color: #ffffff;
+        font-size: $header-height - 0.5rem;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.8);
+        text-shadow: $text-shadow;
+        font-weight: 100;
+        font-family: $header-font-family;
+        @include background-gradient(#000, #444);
+        @include clearfix;
+    }
+
+    .wrapper {
+        padding: 0 $wrapper-padding;
+    }
+}
+/*================= common layout end =================================================================*/
