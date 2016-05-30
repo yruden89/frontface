@@ -1,8 +1,14 @@
 'use strict';
 
 import React from 'react';
+import {withRouter} from 'react-router';
 
-export default React.createClass({
+var TicketListRow = React.createClass({
+    onTicketSelect: function(e) {
+        this.props.router.push({
+            pathname: "purchase-form"
+        });
+    },
     render: function () {
         let ticket = this.props.ticket;
         let flightDuration = ticket.flightDuration;
@@ -26,9 +32,11 @@ export default React.createClass({
                 <td data-label="Кол-во">{ticket.flightChangesCount}</td>
                 <td data-label="Цена">{ticket.price} руб.</td>
                 <td data-label="">
-                    <a href="#" className="button">Купить билет</a>
+                    <a href="#" onClick={this.onTicketSelect} className="button">Купить билет</a>
                 </td>
             </tr>
         );
     }
 });
+
+export default withRouter(TicketListRow);
